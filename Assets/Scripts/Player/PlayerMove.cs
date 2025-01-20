@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace spaceExplorer.player
+namespace spaceExplorer.Player
 {
     public class PlayerMove : MonoBehaviour
     {
@@ -11,7 +11,7 @@ namespace spaceExplorer.player
         public bool isMoving {  get; private set; }
         private void Start()
         {
-            moveDir = playerTransform.position;
+            moveDir = Vector3.zero;
             isMoving = false;
             action = new InputSystem_Actions();
             action.Enable();
