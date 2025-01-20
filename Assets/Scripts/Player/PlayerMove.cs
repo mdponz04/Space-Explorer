@@ -5,14 +5,14 @@ namespace spaceExplorer.Player
     public class PlayerMove : MonoBehaviour
     {
         private InputSystem_Actions action;
-        public Transform playerTransform { get; set; }
+        public Transform PlayerTransform { get; set; }
         private Vector3 moveDir;
-        private float moveSpeed = 5f;
-        public bool isMoving {  get; private set; }
+        private readonly float moveSpeed = 5f;
+        public bool IsMoving {  get; private set; }
         private void Start()
         {
             moveDir = Vector3.zero;
-            isMoving = false;
+            IsMoving = false;
             action = new InputSystem_Actions();
             action.Enable();
         }
@@ -28,13 +28,13 @@ namespace spaceExplorer.Player
             moveDir = new Vector3(inputMoveDir.x, inputMoveDir.y, 0);
             if (moveDir != Vector3.zero)
             {
-                isMoving = true;
+                IsMoving = true;
                 moveDir = moveDir.normalized;
-                playerTransform.position += moveDir * moveSpeed * Time.deltaTime;
+                PlayerTransform.position += moveDir * moveSpeed * Time.deltaTime;
             }
             else
             {
-                isMoving = false;
+                IsMoving = false;
             }
         }
     }

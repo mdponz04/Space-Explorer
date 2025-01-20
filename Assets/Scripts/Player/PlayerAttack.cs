@@ -7,14 +7,14 @@ namespace spaceExplorer.Player
     public class PlayerAttack : MonoBehaviour
     {
         private InputSystem_Actions action;
-        private float laserRange = 100f;
+        private readonly float laserRange = 100f;
         private LayerMask targetLayer;
-        public DamageDealer damageDealer {  get; set; }
+        public DamageDealer DamageDealer {  get; set; }
 
         private void Start()
         {
             
-            targetLayer = LayerMask.GetMask("Enemy");
+            targetLayer = LayerMask.GetMask("Vulnerable");
             action = new InputSystem_Actions();
             action.Enable();
 
@@ -35,7 +35,7 @@ namespace spaceExplorer.Player
             if (hit)
             {
                 Vulnerable target = hit.collider.GetComponent<Vulnerable>();
-                damageDealer.DealDamage(target);
+                DamageDealer.DealDamage(target);
                 Debug.Log($"Hit {hit.collider.name} at {hit.point}");
             }
             else

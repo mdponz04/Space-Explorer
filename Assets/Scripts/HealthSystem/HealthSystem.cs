@@ -9,10 +9,10 @@ namespace spaceExplorer.Health
         public event EventHandler OnHealthChanged;
         public class OnHealthChangedEventArgs : EventArgs
         {
-            public float currentHealth {  get; private set; }
+            public float CurrentHealth {  get; private set; }
             public OnHealthChangedEventArgs(float currentHealth)
             {
-                this.currentHealth = currentHealth;
+                this.CurrentHealth = currentHealth;
             }
         }
         private float maxHealth;

@@ -21,9 +21,9 @@ namespace spaceExplorer.Player
             }
 
             playerAttack = GetComponent<PlayerAttack>();
-            playerAttack.damageDealer = GetComponent<DamageDealer>();
+            playerAttack.DamageDealer = GetComponent<DamageDealer>();
             playerMove = GetComponent<PlayerMove>();
-            playerMove.playerTransform = transform;
+            playerMove.PlayerTransform = transform;
             healthSystem = GetComponent<HealthSystem>();
             healthSystem.Setup(maxHealth);
         }
