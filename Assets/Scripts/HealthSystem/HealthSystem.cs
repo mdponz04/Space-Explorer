@@ -46,8 +46,7 @@ namespace spaceExplorer.Health
         {
             OnDeath?.Invoke(this, EventArgs.Empty);
             Debug.Log($"{gameObject.name} has died.");
-            Destroy(gameObject);
-            
+            Destroy(gameObject); 
         }
     }
 }

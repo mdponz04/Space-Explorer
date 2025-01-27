@@ -19,7 +19,6 @@ namespace spaceExplorer.Asteroid
                 RandomFloat(randomScaleRange.x, randomScaleRange.y), 
                 RandomFloat(randomScaleRange.x, randomScaleRange.y), 
                 1f);
-            
         }
         private Vector2 RandomSpawnPosition()
         {
