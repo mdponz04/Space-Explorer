@@ -29,7 +29,8 @@ namespace spaceExplorer.Player
             // Create a ray starting at the object's position and pointing forward
             Ray ray = new Ray(transform.position, transform.up);
             // Draw a red line from the object's position to the hit point
-            Debug.DrawLine(ray.origin, ray.direction * laserRange, Color.red, 1f);
+            Debug.DrawLine(ray.origin, ray.origin + ray.direction * laserRange, Color.red, 1f);
+            // Cast a ray in the forward direction
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, laserRange, targetLayer);
             // Check if the ray hits something
             if (hit)
