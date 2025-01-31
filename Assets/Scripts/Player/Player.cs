@@ -6,7 +6,7 @@ namespace spaceExplorer.Player
 {
     public class Player : MonoBehaviour, IDamageSource
     {
-        public Player Instance { get; private set; }
+        public static Player Instance { get; private set; }
         private PlayerMove playerMove;
         private PlayerAttack playerAttack;
         private float damage = 10f;
