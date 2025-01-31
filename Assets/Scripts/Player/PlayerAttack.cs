@@ -9,11 +9,12 @@ namespace spaceExplorer.Player
         private InputSystem_Actions action;
         private readonly float laserRange = 100f;
         private LayerMask targetLayer;
+        private PlayerAttackVisual playerAttackVisual;
         public DamageDealer DamageDealer {  get; set; }
 
         private void Start()
         {
-            
+            playerAttackVisual = GetComponentInChildren<PlayerAttackVisual>();
             targetLayer = LayerMask.GetMask("Vulnerable");
             action = new InputSystem_Actions();
             action.Enable();
@@ -22,6 +23,7 @@ namespace spaceExplorer.Player
         }
         private void OnShootPerformed(InputAction.CallbackContext context)
         {
+            playerAttackVisual.Shoot();
             ShootLaser();
         }
         private void ShootLaser()

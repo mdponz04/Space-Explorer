@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
-{ 
+{
+    public event EventHandler OnPointsChanged;
     public static GameController Instance {  get; private set; }
     private int points;
     private float time;
@@ -14,7 +16,7 @@ public class GameController : MonoBehaviour
         }
         Instance = this;
     }
-
+    
     private void Start()
     {
         points = 0;
@@ -28,6 +30,7 @@ public class GameController : MonoBehaviour
     public void AddPoints()
     {
         points++;
+        OnPointsChanged?.Invoke(this, EventArgs.Empty);
     }
     public int GetPoints() => points;
     public float GetTime() => time;
