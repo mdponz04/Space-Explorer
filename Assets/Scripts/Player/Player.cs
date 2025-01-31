@@ -26,6 +26,11 @@ namespace spaceExplorer.Player
             playerMove.PlayerTransform = transform;
             healthSystem = GetComponent<HealthSystem>();
             healthSystem.Setup(maxHealth);
+            healthSystem.OnDeath += OnDeath;
+        }
+        private void OnDeath(object sender, System.EventArgs e)
+        {
+            Debug.Log("Player has died.");
         }
         float IDamageSource.GetDamage() => damage;
         
